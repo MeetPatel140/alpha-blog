@@ -1,0 +1,33 @@
+<div class="container" id="main-container">
+  <h1 align="center">All Blogs</h1>
+  <div class="container mt-4">
+      <div class="row">
+          <% @articles.each do |article| %>
+              <div class="col-md-6 mb-4">
+                  <div class="card">
+                      <div class="card-body">
+                        <div class="card-top-menu">
+                          <div>
+                            <p class="card-text small-text p-0">Blog ID: <%= article.id %></p>
+                          </div>
+                          <div class="action-buttons">
+                          <div class="edit-button">
+                            <p class="p-0 m-0"><%= link_to raw('<i class="fa fa-edit"></i>'), edit_article_path(article.id) %></p>
+                          </div>
+                          <div class="delete-button">
+                            <%= link_to raw('<i class="fa fa-trash"></i>'), article_path(article.id), data: { "turbo-method": :delete , turbo_confirm: "Are You Sure ? "} %></p>
+                          </div>
+                          </div>
+                        </div>
+                        <h5 class="card-title"><%= link_to truncate_title(article.title), article_path(article) %></h5>
+                        <p class="card-text">
+                          <%= simple_format(truncate_description(article.description)) %>
+                        </p>
+                        <%= link_to "Read More", article_path(article), class: "btn btn-primary", id: "read-more-btn" %>
+                      </div>
+                  </div>
+              </div>
+          <% end %>
+      </div>
+  </div>
+</div>

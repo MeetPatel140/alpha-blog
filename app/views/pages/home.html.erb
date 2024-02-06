@@ -1,0 +1,103 @@
+<div class="maindiv">
+  <header class="sticky-top">
+  <nav class="navbar container">
+    <div class="logo"><i class="fa fa-rss-square"></i> <a href="/">Alpha-Blog</a></div>
+    <ul class="nav nav-pills underLineAni">
+      <li class="nav-item"><a href="/" class="nav-link active" style="color: white;" aria-current="page">Home</a></li>
+      <li class="nav-item"><a href="/blogs"class="nav-link" style="color: white;">Blogs</a></li>
+      <li class="nav-item"><a href="/about-us"class="nav-link" style="color: white;">About Us</a></li>
+      <li class="nav-item"><a href="/contact"class="nav-link" style="color: white;">Contact</a></li>
+    </ul>
+    <div class="login-signup">
+      <!-- Button Trigger for Login Modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fa fa-user-lock"></i> Login</button>
+      <!-- Button Trigger for Signup Modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signupModal"><i class="fa fa-user-plus"></i> Signup</button>
+    </div>
+  </nav>
+</header>
+<div class="hero-section">
+      <div class="greeting-banner">
+        <h1>Ignite Your Curiosity</h1>
+        <p>Alpha-Blog Invites You to a Realm of Articles and Blogs.</p>
+      </div>
+  <div class="backgroundImg">
+    <video src="<%= asset_path('video2160p.mp4') %>" autoplay loop muted class="video">
+  </div>
+</div>
+
+<!-- Start of Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-user-lock"></i> Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+          <button type="button" class="btn btn-primary"><i class="fa fa-sign-in-alt"></i> Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- End of Login Modal -->
+
+<!-- Start of Signup Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-user-plus"></i> Signup</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= form_with(url: '/signup', method: :post) do |form| %>
+        <!-- First Name -->
+        <div class="mb-3">
+          <%= form.label :first_name, "First Name", class: "form-label" %>
+          <%= form.text_field :first_name, class: "form-control", required: true %>
+        </div>
+
+        <!-- Last Name -->
+        <div class="mb-3">
+          <%= form.label :last_name, "Last Name", class: "form-label" %>
+          <%= form.text_field :last_name, class: "form-control" %>
+        </div>
+
+        <!-- Username -->
+        <div class="mb-3">
+          <%= form.label :username, "Username", class: "form-label" %>
+          <%= form.text_field :username, class: "form-control", required: true %>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+          <%= form.label :email, "Email", class: "form-label" %>
+          <%= form.email_field :email, class: "form-control", required: true %>
+        </div>
+
+        <!-- Password -->
+        <div class="mb-3">
+          <%= form.label :password, "Password", class: "form-label" %>
+          <%= form.password_field :password, class: "form-control", required: true %>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-end">
+          <%= form.submit "Signup", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End of Signup Modal -->
+
+</div>
