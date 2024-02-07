@@ -10,18 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_05_104545) do
-  create_table "signups", force: :cascade do |t|
+ActiveRecord::Schema[7.1].define(version: 2024_02_07_105614) do
+  create_table "article_categories", force: :cascade do |t|
+    t.integer "article_id"
+    t.integer "category_id"
+  end
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer "user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
     t.string "username"
     t.string "email"
-    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "password_digest"
+    t.boolean "admin", default: false
+    t.string "first_name"
+    t.string "last_name"
     t.string "city"
     t.string "country"
     t.string "bio"
@@ -30,9 +47,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_05_104545) do
     t.string "facebook_profile"
     t.string "twitter_profile"
     t.string "instagram_profile"
-    t.boolean "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean "account_status", default: false
   end
 
 end
