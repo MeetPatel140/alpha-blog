@@ -17,7 +17,7 @@
             <%= link_to "About page", about_path, class: "text-decoration-none nav-link text-white p-0" %>
           </li>
           <li class="nav-item">
-            <%= link_to "New Article", new_article_path, class: "text-decoration-none nav-link text-white p-0" %>
+            <%= link_to "New Blog", new_article_path, class: "text-decoration-none nav-link text-white p-0" %>
           </li>
           <li class="nav-item">
             <%= link_to "Bloggers", users_path, class: "text-decoration-none acitve nav-link text-white p-0" %>
@@ -48,6 +48,7 @@
       <div class="greeting-banner">
         <h1>Ignite Your Curiosity</h1>
         <p>Alpha-Blog Invites You to a Realm of Articles and Blogs.</p>
+        <button class="btn btn-primary mt-5 btn-lg p-2" type="button" data-bs-toggle="modal" data-bs-target="#signupModal"><i class="fa fa-paper-plane"></i> Get Started</button>
       </div>
   <div class="backgroundImg">
     <video src="<%= asset_path('video2160p.mp4') %>" autoplay loop muted class="video">

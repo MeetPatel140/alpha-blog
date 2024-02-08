@@ -298,10 +298,6 @@ header {
 }
 
 footer {
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
   position: sticky;
   bottom: 0;
   z-index: 2;
@@ -330,4 +326,8 @@ footer ul li {
 .maindiv{
   height: 90%;
   width: 100%;
+}
+
+.gravatar-rounded-image img {
+  border-radius: 100% !important;
 }
