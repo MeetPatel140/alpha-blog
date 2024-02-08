@@ -1,5 +1,4 @@
-<div class="maindiv">
-    <nav class="navbar navbar-expand-lg bg-dark p-3 sticky-top">
+<nav class="navbar navbar-expand-lg bg-dark p-3 sticky-top">
       <div class="container-fluid">
       <a class="navbar-brand text-white mx-5" href="/"><i class="fa fa-rss-square"></i> Alpha-Blog</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,7 +6,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav nav-pills me-auto mb-2 mb-lg-0 underLineAni d-flex gap-4">
-          <li class="nav-item active">
+          <li class="nav-item">
             <%= link_to "Home", root_path, class: "text-decoration-none nav-link text-white p-0" %>
           </li>
           <li class="nav-item">
@@ -19,7 +18,7 @@
           <li class="nav-item">
             <%= link_to "New Article", new_article_path, class: "text-decoration-none nav-link text-white p-0" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <%= link_to "Bloggers", users_path, class: "text-decoration-none acitve nav-link text-white p-0" %>
           </li>
         </ul>
@@ -44,16 +43,34 @@
       </div>
       </div>
     </nav>
-<div class="hero-section">
-      <div class="greeting-banner">
-        <h1>Ignite Your Curiosity</h1>
-        <p>Alpha-Blog Invites You to a Realm of Articles and Blogs.</p>
-      </div>
-  <div class="backgroundImg">
-    <video src="<%= asset_path('video2160p.mp4') %>" autoplay loop muted class="video">
+<h1 class="text-center mt-4">Alpha Bloggers</h1>
+<div class="container">
+  <div class="row">
+      <% @users.each do |user| %>
+        <div class="col-6">
+          <div class="card text-center mt-5 shadow-lg">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <h5 class="card-title m-0 d-flex align-items-center gap-3"><%= link_to gravatar_for(user, size: 30), user_path(user), class: "rounded-circle" %> <%= link_to user.username, user_path(user) %></h5>
+              <div class="d-flex align-items-center gap-3">
+                <button class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i> <%= link_to 'View Profile', user, class: "text-white" %></button>
+                <button class="btn btn-sm btn-secondary"><i class="fa-solid fa-pen-to-square"></i> <%= link_to 'Edit Profile', edit_user_path(user), class: "text-white" %></button>
+              </div>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to gravatar_for(user, size: 150), user_path(user) %></h5>
+              <h5><%= link_to user.username, user_path(user) %></h5>
+              <p class="cart-text"><%= pluralize(user.articles.count, "article") %></p> 
+            </div>
+            <div class="card-footer text-muted d-flex align-items-center justify-content-between">
+              <p class="card-text m-0" style="font-size: 12px;">Joined : <%= time_ago_in_words(user.updated_at) %> ago</p>        
+            </div>      
+          </div>
+        </div>
+      <% end %>
   </div>
 </div>
+<div class="flickr_pagination mt-5 mb-5">
+  <%= will_paginate @users, :container => false %>
 </div>
-
 <%= render 'layouts/signupModal' %>
 <%= render 'layouts/loginModal' %>

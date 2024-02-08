@@ -1,5 +1,4 @@
-<div class="maindiv">
-    <nav class="navbar navbar-expand-lg bg-dark p-3 sticky-top">
+<nav class="navbar navbar-expand-lg bg-dark p-3 sticky-top">
       <div class="container-fluid">
       <a class="navbar-brand text-white mx-5" href="/"><i class="fa fa-rss-square"></i> Alpha-Blog</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,7 +6,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav nav-pills me-auto mb-2 mb-lg-0 underLineAni d-flex gap-4">
-          <li class="nav-item active">
+          <li class="nav-item">
             <%= link_to "Home", root_path, class: "text-decoration-none nav-link text-white p-0" %>
           </li>
           <li class="nav-item">
@@ -16,7 +15,7 @@
           <li class="nav-item">
             <%= link_to "About page", about_path, class: "text-decoration-none nav-link text-white p-0" %>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <%= link_to "New Article", new_article_path, class: "text-decoration-none nav-link text-white p-0" %>
           </li>
           <li class="nav-item">
@@ -44,16 +43,10 @@
       </div>
       </div>
     </nav>
-<div class="hero-section">
-      <div class="greeting-banner">
-        <h1>Ignite Your Curiosity</h1>
-        <p>Alpha-Blog Invites You to a Realm of Articles and Blogs.</p>
-      </div>
-  <div class="backgroundImg">
-    <video src="<%= asset_path('video2160p.mp4') %>" autoplay loop muted class="video">
-  </div>
-</div>
-</div>
+
+<h1 align="center">New Article</h1>
+
+<%= render 'form' %>
 
 <%= render 'layouts/signupModal' %>
 <%= render 'layouts/loginModal' %>
