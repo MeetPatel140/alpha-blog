@@ -1,0 +1,12 @@
+.backgroundImg {
+  background-image: asset-url('demo.jpg') !important;
+  // background-repeat: no-repeat ;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+.maindiv{
+  height: 100%;
+  width: 100%;
+}
