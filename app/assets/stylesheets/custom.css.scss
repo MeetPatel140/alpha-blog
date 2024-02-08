@@ -200,6 +200,7 @@ header {
   height: 101vh;
   width: 100%;
   filter: contrast(1.5);
+  filter:contrast(1.5);
   position: relative;
   z-index: 1;
 }
@@ -322,4 +323,11 @@ footer ul {
 footer ul li {
   float: left;
   margin-left: 15px;
+  height: 91vh;
+  background-color: rgba(0, 0, 30, 0.5); /* Dark-blue overlay */
+  z-index: 1;
+}
+.maindiv{
+  height: 90%;
+  width: 100%;
 }

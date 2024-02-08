@@ -18,3 +18,5 @@ import "controllers"
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+//= require video720p.mp4
+//= require video2160p.mp4

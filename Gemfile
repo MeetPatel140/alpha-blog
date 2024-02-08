@@ -5,7 +5,6 @@ gem 'sassc'
 gem 'will_paginate'
 gem 'mini_racer'
 
-
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails"
 
