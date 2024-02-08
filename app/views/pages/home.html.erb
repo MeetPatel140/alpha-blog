@@ -1,18 +1,46 @@
 <div class="maindiv">
-  <div class="backgroundImg">
-    <header>
+  <header class="sticky-top">
   <nav class="navbar container">
-    <div class="logo"><i class="fa fa-rss-square"></i> Alpha-Blog</div>
-    <ul class="nav nav-pills">
+    <div class="logo"><i class="fa fa-rss-square"></i> <a href="/">Alpha-Blog</a></div>
+    <ul class="nav nav-pills underLineAni">
       <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Home</a></li>
       <li class="nav-item"><a href="/blogs"class="nav-link" style="color: white;">Blogs</a></li>
       <li class="nav-item"><a href="/about-us"class="nav-link" style="color: white;">About Us</a></li>
       <li class="nav-item"><a href="/contact"class="nav-link" style="color: white;">Contact</a></li>
     </ul>
     <div class="admin-login">
-      <a href="/admin" class="nav-link"><i class="fa fa-user-lock"></i> Login</a>
+      <!-- Button Trigger for Login Modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fa fa-user-lock"></i> Login</button>
     </div>
   </nav>
 </header>
+<div class="hero-section">
+      <div class="greeting-banner">
+        <h1>Ignite Your Curiosity</h1>
+        <p>Alpha-Blog Invites You to a Realm of Articles and Blogs.</p>
+      </div>
+  <div class="backgroundImg">
+    <video src="<%= asset_path('video2160p.mp4') %>" autoplay loop muted class="video">
+  </div>
 </div>
+
+<!-- Start of Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-user-lock"></i> Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+          <button type="button" class="btn btn-primary"><i class="fa fa-sign-in-alt"></i> Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End of Login Modal -->
 </div>
