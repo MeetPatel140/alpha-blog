@@ -16,7 +16,7 @@
             <%= link_to "About page", about_path, class: "text-decoration-none nav-link text-white p-0" %>
           </li>
           <li class="nav-item">
-            <%= link_to "New Article", new_article_path, class: "text-decoration-none nav-link text-white p-0" %>
+            <%= link_to "New Blog", new_article_path, class: "text-decoration-none nav-link text-white p-0" %>
           </li>
           <li class="nav-item">
             <%= link_to "Bloggers", users_path, class: "text-decoration-none acitve nav-link text-white p-0" %>
@@ -43,9 +43,122 @@
       </div>
       </div>
     </nav>
-    <h1>This is the about page of my blog app</h1>
 
-<%= link_to "Home", root_path %>
+<!-- Content Section -->
+<div class="container mt-5">
+    <div class="row contact-us-form">
+        <div class="col-md-6 bg-light p-5">
+            <h2 class="text-dark">Who We Are</h2>
+            <p class="text-muted">Welcome to our digital sanctuary, where stories come to life and ideas find their wings. We are not just storytellers; we are dreamweavers, architects of imagination, and curators of inspiration.</p>
+            <p class="text-muted">Driven by the passion to share, connect, and enlighten, we invite you to embark on a journey through the realms of knowledge, creativity, and discovery with us.</p>
+        </div>
+        <div class="col-md-6 bg-dark text-light p-5">
+            <h2>Our Mission</h2>
+            <p>At the heart of our mission lies a commitment to illuminate minds and kindle the flames of curiosity. We strive to be a guiding star in the vast cosmos of information, offering a haven where every seeker finds something extraordinary.</p>
+            <p>We believe in the transformative power of words and ideas. Our mission is to empower, educate, and entertain, fostering a community where diverse voices harmonize to create a symphony of knowledge and understanding.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action Section -->
+<div class="container mt-5 text-center">
+    <p class="lead">Ready to explore more?</p>
+    <%= link_to "Get Started", signup_path, class: "btn btn-lg btn-primary" %>
+</div>
+
+<!-- Social Icons Section -->
+<div class="container mt-5 text-center">
+    <section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<div class="wrapper">
+						<div class="row no-gutters contact-us-form">
+              <h2 class="mt-4 mb-0">Connect With Us</h2>
+							<div class="col-md-6 d-flex align-items-stretch">
+								<div class="contact-wrap w-100 p-md-5 p-4 py-5">
+									<h3 class="mb-4">Write us</h3>
+									<div id="form-message-warning" class="mb-4"></div> 
+				      		<div id="form-message-success" class="mb-4">
+				            Your message was sent, thank you!
+				      		</div>
+									<form method="POST" id="contactForm" name="contactForm" class="contactForm">
+										<div class="row">
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+												</div>
+											</div>
+											<div class="col-md-12"> 
+												<div class="form-group">
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Message"></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<button type="button" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Submit Form</button>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-md-6 d-flex align-items-stretch">
+								<div class="info-wrap w-100 p-md-5 p-4 py-5 img">
+									<h3>Contact information</h3>
+									<p class="mb-4">We're open for any suggestion or just to have a chat</p>
+				        	<div class="dbox w-100 d-flex align-items-start">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-map-marker"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Address:</span> 518, Solaris Business Hub, Opp. Parshwanath Jain Temple, Bhuuangdev Cross Road, Sola, Ahmedabad.</p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-center">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-phone"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Phone:</span> <a href="tel://6353877251">+91 6353877251</a></p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-center">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-paper-plane"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Email:</span> <a href="mailto:meetsolanki140@gmail.com">meetsolanki140@gmail.com</a></p>
+					          </div>
+				          </div>
+				        	<div class="dbox w-100 d-flex align-items-center">
+				        		<div class="icon d-flex align-items-center justify-content-center">
+				        			<span class="fa fa-globe"></span>
+				        		</div>
+				        		<div class="text pl-3">
+					            <p><span>Website</span> <a href="https://aimclasses.in">aimclasses.in</a></p>
+					          </div>
+				          </div>
+			          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+
 
 <%= render 'layouts/signupModal' %>
 <%= render 'layouts/loginModal' %>
