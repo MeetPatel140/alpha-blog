@@ -50,7 +50,11 @@
         <div class="col-6">
           <div class="card text-center mt-5 shadow-lg">
             <div class="card-header d-flex justify-content-between align-items-center">
-              <h5 class="card-title m-0 d-flex align-items-center gap-3 gravatar-rounded-image"><%= link_to gravatar_for(user, size: 30), user_path(user), class: "rounded-circle" %> <%= link_to user.username, user_path(user) %></h5>
+              <h5 class="card-title m-0 d-flex align-items-center gap-3 gravatar-rounded-image"><%= link_to gravatar_for(user, size: 30), user_path(user), class: "rounded-circle" %> <%= link_to user.username, user_path(user) %>
+              <% if user.admin? %>
+              <i class="fa fa-crown" style="color: rgba(50,100,250,1);"></i>
+              <% end %>
+              </h5>
               <div class="d-flex align-items-center gap-3">
                 <button class="btn btn-sm btn-primary"><i class="fa-solid fa-eye"></i> <%= link_to 'View', user, class: "text-white" %></button>
                 <% if logged_in? %>
@@ -72,7 +76,7 @@
               <p class="cart-text"><%= pluralize(user.articles.count, "article") %></p> 
             </div>
             <div class="card-footer text-muted d-flex align-items-center justify-content-between">
-              <p class="card-text m-0" style="font-size: 12px;">Joined : <%= time_ago_in_words(user.updated_at) %> ago</p>        
+              <p class="card-text m-0" style="font-size: 12px;">Joined On : <%= user.created_at.strftime('%d-%m-%Y') %></p>        
             </div>      
           </div>
         </div>
@@ -82,5 +86,3 @@
 <div class="flickr_pagination mt-5 mb-5">
   <%= will_paginate @users, :container => false %>
 </div>
-<%= render 'layouts/signupModal' %>
-<%= render 'layouts/loginModal' %>
