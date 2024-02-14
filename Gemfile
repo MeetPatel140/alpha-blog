@@ -4,6 +4,7 @@ ruby "3.3.0"
 gem 'sassc'
 gem 'will_paginate'
 gem 'mini_racer'
+gem 'pry-rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails"
@@ -78,8 +79,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
-gem 'pry-rails'
 
 group :production do
   gem 'rails_12factor'

@@ -339,3 +339,39 @@ footer ul li {
   margin-bottom: 50px;
   box-shadow: 0px 0px 25px gray;
 }
+
+.btn .login-signup-page-button:hover {
+  color: white !important;
+  outline: none !important;
+}
+
+.flickr_pagination {
+  text-align: center !important;
+  padding: 0.3em !important; 
+  cursor: default  !important; }
+  .flickr_pagination a, .flickr_pagination span, .flickr_pagination em {
+      padding: 0.2em 0.5em !important;
+      border-radius: 5px !important;}
+  .flickr_pagination .disabled {
+    color: #aaaaaa !important; }
+  .flickr_pagination .current {
+    font-style: normal !important;
+    font-weight: bold !important;
+    color: #ff0084 !important; }
+  .flickr_pagination a {
+    border: 1px solid whitesmoke !important;
+    color: whitesmoke !important;
+    text-decoration: none !important; }
+    .flickr_pagination a:hover, .flickr_pagination a:focus {
+      border-color: grey !important;
+      background: whitesmoke !important;
+      color: grey !important; }
+  .flickr_pagination .page_info {
+    color: #aaaaaa !important; 
+    padding-top: 0.8em !important; }
+  .flickr_pagination .previous_page, .flickr_pagination .next_page {
+    border-width: 2px !important; }
+  .flickr_pagination .previous_page {
+    margin-right: 1em !important; }
+  .flickr_pagination .next_page {
+    margin-left: 1em !important; }

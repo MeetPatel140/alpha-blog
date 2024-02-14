@@ -28,18 +28,18 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit"><i class="fa fa-search"> </i> Search</button>
           </form>
-          <% if logged_in? %>
-  <button class="btn btn-outline-danger" type="button" onclick="location.href='<%= logout_path %>'">
-    <i class="fa fa-sign-out-alt"></i> Log out
-  </button>
-<% else %>
-  <button class="btn btn-outline-info" type="button" data-bs-toggle="modal" data-bs-target="#signupModal">
-    <i class="fa fa-user-plus"></i> Signup
-  </button>
-  <button class="btn btn-outline-info" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
-    <i class="fa fa-sign-in-alt"></i> Login
-  </button>
-<% end %>
+          <% if  %>
+            <button class="btn btn-outline-danger" type="button" onclick="location.href='<%= logout_path %>'">
+              <i class="fa fa-sign-out-alt"></i> Log out
+            </button>
+          <% else %>
+            <button class="btn btn-outline-info" type="button" data-bs-toggle="modal" data-bs-target="#signupModal">
+              <i class="fa fa-user-plus"></i> Signup
+            </button>
+            <button class="btn btn-outline-info" type="button" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="fa fa-sign-in-alt"></i> Login
+            </button>
+          <% end %>
         </div>
       </div>
       </div>
@@ -55,6 +55,3 @@
   </div>
 </div>
 </div>
-
-<%= render 'layouts/signupModal' %>
-<%= render 'layouts/loginModal' %>
